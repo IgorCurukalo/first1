@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+        {% for lyb in libs %}
+            <h1><a>Название библиотеки: </a>{{ lyb.librarys_name }}</h1>
+            <h1><a>Адрес библиотеки: </a>{{ lyb.id_librarys_storage.librarys_storage_address }}</h1>
+            <h1><a>Дата открытия библиотеки: </a>{{ lyb.id_librarys_storage.date_creation }}</h1>
+            <h1><a>Телефон: </a>{{ lyb.id_librarys_storage.contact_phone }}</h1>
+            <h1><a>Почта: </a>{{ lyb.id_librarys_storage.email }}</h1>
+            <h1><a>Сайт: </a>{{ lyb.id_librarys_storage.website_linck }}</h1>
+            {% for bibliotekar in lyb.librarian.all %}
+                <h1><a>Фамилия: </a>{{ bibliotekar.last_name }}</h1>
+                <h1><a>Имя: </a>{{ bibliotekar.first_name }}</h1>
+                <h1><a>Отчество: </a>{{ bibliotekar.father_name }}</h1>
+                <h1><a>Дата устройства на работу: </a>{{ bibliotekar.date_creation }}</h1>
+                <h1><a>Дата рождения: </a>{{ bibliotekar.birthday }}</h1>
+                <h1><a>Домашний адрес: </a>{{ bibliotekar.home_address }}</h1>
+                <h1><a>Телефон: </a>{{ bibliotekar.contact_phone }}</h1>
+                <h1><a>Почта: </a>{{ bibliotekar.email }}</h1>
+            {% endfor %}
+        {% empty %}
+            <h1>К сожелению не нашлось!</h1>
+        {% endfor %}
+</body>
+</html>

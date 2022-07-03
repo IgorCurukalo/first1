@@ -17,9 +17,18 @@ class Books(models.Model):
         null=True,
         blank=True
     )
+
     date_creation = models.DateField(verbose_name='Дата написания книги', null=True, blank=True)
     date_add = models.DateTimeField(auto_now_add=True, verbose_name='Дата добавления')
     is_daleted = models.BooleanField(default=False, verbose_name='Удалено')
+    book_img = models.ImageField(
+        upload_to='photos/%Y/%m/%d/',
+        height_field=350,
+        width_field=150,
+        verbose_name="Ссылка на изображение",
+        null=True,
+        blank=True
+    )
 
     def __str__(self):
         return self.book_name
@@ -49,7 +58,7 @@ class PublishingHouse(models.Model):
 class Author(models.Model):
     first_name = models.CharField(max_length=100, verbose_name='Имя автора')
     last_name = models.CharField(max_length=100, verbose_name='Фамилия автора')
-    fathername = models.CharField(max_length=100, verbose_name='Отчество автора', null=True, blank=True)
+    father_name = models.CharField(max_length=100, verbose_name='Отчество автора', null=True, blank=True)
     country = models.CharField(max_length=200, verbose_name='Страна')
     birthday = models.DateField(verbose_name='Дата рождения')
     languages = models.JSONField(verbose_name='Языки на которых писал автор', null=True, blank=True)

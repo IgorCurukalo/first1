@@ -47,15 +47,15 @@ class PublishingHouseAdmin(admin.ModelAdmin):
 
 
 class AuthorAdmin(admin.ModelAdmin):
-    list_display = ('id', 'first_name', 'last_name', 'fathername', 'country',
+    list_display = ('id', 'first_name', 'last_name', 'father_name', 'country',
                     'birthday', 'languages', 'date_add', 'is_daleted')
     list_display_links = ('id', 'first_name')
-    search_fields = ('first_name', 'last_name', 'fathername')
+    search_fields = ('first_name', 'last_name', 'father_name')
     list_editable = ('is_daleted',)
     list_filter = ('last_name', 'country', 'languages', 'is_daleted')
     fieldsets = (
             (None, {
-                'fields': ('first_name', 'last_name', 'fathername', 'country', 'birthday', 'languages', 'is_daleted')
+                'fields': ('first_name', 'last_name', 'father_name', 'country', 'birthday', 'languages', 'is_daleted')
             }),
     )
 
