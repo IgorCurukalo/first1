@@ -19,7 +19,7 @@ class LibrarysAdmin(admin.ModelAdmin):
     list_filter = ('librarys_name', 'is_daleted')
     fieldsets = (
         (None, {
-            'fields': ('librarys_name', 'description', 'id_librarys_storage')
+            'fields': ('librarys_name', 'description', 'id_librarys_storage', 'library_img')
         }),
     )
 

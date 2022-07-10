@@ -19,6 +19,12 @@ class Librarys(models.Model):
     )
     date_add = models.DateTimeField(auto_now_add=True, verbose_name='Дата добавления')
     is_daleted = models.BooleanField(default=False, verbose_name='Удалено')
+    library_img = models.ImageField(
+        upload_to='media/%Y/%m/%d/',
+        verbose_name="Ссылка на изображение",
+        null=True,
+        blank=True
+    )
 
     def __str__(self):
         return self.librarys_name

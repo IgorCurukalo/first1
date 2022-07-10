@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import get_librarys_list
+from .views import LibrarysList, LibrarysDetail
 
 
 urlpatterns = [
-    path('', get_librarys_list),
+    path('', LibrarysList.as_view()),
+    path('<int:pk>', LibrarysDetail.as_view()),
 ]

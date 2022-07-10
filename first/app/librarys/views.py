@@ -1,10 +1,13 @@
+from django.views.generic import ListView, DetailView
 from django.shortcuts import render
-from .models import Librarys
+from .models import Librarys, Librarian
 
-def get_librarys_list(request):
-    library = Librarys.objects.filter(pk=1)
-    context = {
-        'libs': library,
-    }
+class LibrarysList(ListView):
 
-    return render(request, 'librarys/list_librarys.html', context)
+    model = Librarys
+    context_object_name = 'librarys'
+
+class LibrarysDetail(DetailView):
+
+    model = Librarys
+    pk_url_kwarg = 'pk'
