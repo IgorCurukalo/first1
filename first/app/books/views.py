@@ -1,27 +1,57 @@
+from django.views.generic import ListView, DetailView
 from django.shortcuts import render
-from .models import Books, Author, PublishingHouse
-
-def get_books_list(request):
-    book = Books.objects.filter(pk=1)
-    context = {
-        'books': book,
-        'sale': True,
-    }
-
-    return render(request, 'books/list_books.html', context)
+from .models import Books, Author
 
 
+class BooksList(ListView):
+
+    model = Books
+    # template_name = 'books_list.html'
+    # queryset = Books.objects.all()
+    context_object_name = 'books'
+
+    # print('hello')
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['books'] = self.queryset
+    #     return context
+
+class BooksDetail(DetailView):
+
+    model = Books
+    # template_name = 'books_detail.html'
+    pk_url_kwarg = 'pk'
+
+
+# def get_book(request, id_book):
+#
+#     books = Books.objects.get(pk=id_book)
+#
+#     return books
 
 
 
-
-
-
-
-
-
-
-
+# 4/7/2022
+    # def get_book(request, id_book):
+    #     books = Books.objects.get(pk=id_book)
+    #
+    #     return books
+    #
+    #     def get_books_list(request):
+    #         book = Books.objects.all()
+    #
+    #         context = {
+    #             'books': book,
+    #             'sale': True,
+    #         }
+    #
+    #         return render(request, 'books/index.html', context)
+    #
+    #     def get_book(request, id_book):
+    #         books = Books.objects.get(pk=id_book)
+    #
+    #         return books
 
 
 

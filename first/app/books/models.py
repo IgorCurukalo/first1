@@ -22,9 +22,7 @@ class Books(models.Model):
     date_add = models.DateTimeField(auto_now_add=True, verbose_name='Дата добавления')
     is_daleted = models.BooleanField(default=False, verbose_name='Удалено')
     book_img = models.ImageField(
-        upload_to='photos/%Y/%m/%d/',
-        height_field=350,
-        width_field=150,
+        upload_to='media/%Y/%m/%d/',
         verbose_name="Ссылка на изображение",
         null=True,
         blank=True
