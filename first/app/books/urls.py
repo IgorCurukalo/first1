@@ -1,18 +1,8 @@
 from django.urls import path
-from .views import BooksList, BooksDetail
-    # , get_book
+from .views import BookList, BooksDetail
 
 
 urlpatterns = [
-    path('', BooksList.as_view()),
+    path('', BookList.as_view(), name='main'),
     path('<int:pk>', BooksDetail.as_view()),
 ]
-
-
-# 4/7/2022
-#
-# from .views import get_books_list,get_book
-# urlpatterns = [
-#     path('', get_books_list),
-#     path('<int:id_book>', get_book),
-# ]

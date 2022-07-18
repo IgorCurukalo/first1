@@ -108,6 +108,13 @@
         </div>
     </header>
 
+    <div>
+        <form method="get">
+            {{ filter.form.as_p }}
+            <input type="Submit" />
+        </form>
+    </div>
+
     <!-- service_area_start  -->
     <div class="service_area">
         <div class="container">
@@ -120,7 +127,7 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                {% for book in books %}
+                {% for book in filter.qs %}
                 <div class="col-lg-4 col-md-6">
                     <div class="single_service">
                          <div>
@@ -139,6 +146,19 @@
         </div>
     </div>
     <!-- service_area_end -->
+
+    {% comment %}
+     <form action="" method="get">
+        {{ filter.form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+    {% endcomment %}
 
     <!-- footer_start  -->
     <footer class="footer">
