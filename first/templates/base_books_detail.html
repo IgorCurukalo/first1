@@ -1,0 +1,61 @@
+{% load static %}
+
+{% include "inc/_inc.html" %}
+
+{% include "inc/_header.html" %}
+
+    <main>
+        <div class="service_area">
+            <div class="container">
+                <div class="row justify-content-center ">
+                    <div class="col-lg-7 col-md-10">
+                        <div class="section_title text-center mb-95">
+                            <H1>{{ books.book_name }}</H1>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single_service">
+                            <div class="section_title text-center mb-95">
+                                <H1>Автор</H1>
+                            </div>
+                            {% for autor in books.author.all %}
+                                    <p>Автор: {{ autor.last_name }} {{ autor.first_name }} {{ autor.father_name }}</p>
+                                    <p>Страна: {{ autor.country }}</p>
+                                    <p>Дата Рождения: {{ autor.birthday }}</p>
+                                    <p>Язаки на которых писал автор:
+                                    {% for key, value in autor.languages.items %}
+                                        {{value}}
+                                    {% endfor %}
+                                </p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single_service">
+                            <div class="section_title text-center mb-95">
+                                <H1>Издательство</H1>
+                            </div>
+                            <p>Название издательства: {{ books.id_publishing_house.publishing_house_name }}</p>
+                            <p>Адрес компании: {{ books.id_publishing_house.adress }}</p>
+                            <p>Номер телефона: {{ books.id_publishing_house.contact_phone }}</p>
+                            <p>Email: {{ books.id_publishing_house.email }}</p>
+                            <p>Ссылка на сайт: {{ books.id_publishing_house.website_linck }}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single_service">
+                            <div class="section_title text-center mb-95">
+                                <H1>Обложка книги</H1>
+                            </div>
+                            <img src="/media/{{ books.book_img }}" class="mx-auto d-block" style="height: 200px; width: 150;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% include "inc/_footer.html" %}

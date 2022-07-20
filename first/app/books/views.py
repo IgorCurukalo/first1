@@ -22,25 +22,22 @@ class BookList(FilterView):
         return context
 
 
-# def get_book(request):
-#
-#     if request.method == 'POST':
-#         form = BookForm(request.POST)
-#
-#         if form.is_valid():
-#             book_name = form.cleaned_data['book_name']
-#             authors = form.cleaned_data['authors']
-#
-#     form = BookForm()
-#
-#     filter = BooksFilter(request.GET, queryset=Books.objects.all())
-#
-#     context = {
-#         'filter': filter,
-#         'form': form,
-#     }
-#
-#     return render(request, 'books/books_list.html', context=context)
+def add_books(request):
+
+    if request.method == 'POST':
+        form = BookForm(request.POST)
+
+        if form.is_valid():
+            book_name = form.cleaned_data['book_name']
+            authors = form.cleaned_data['authors']
+
+    form = BookForm()
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'books/add_books.html', context=context)
 
 
 class BooksDetail(DetailView):
