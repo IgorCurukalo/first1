@@ -14,7 +14,7 @@ class Books(models.Model):
         'PublishingHouse',
         on_delete=models.CASCADE,
         related_name='publishinghouse_books',
-        verbose_name='ID издательство',
+        verbose_name='Издательство',
         null=True,
         blank=True
     )

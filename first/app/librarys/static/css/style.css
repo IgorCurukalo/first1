@@ -1879,16 +1879,16 @@ h3 {
 @media (max-width: 767px) {
   /* line 4, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_service.scss */
   .service_area {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   /* line 4, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_service.scss */
   .service_area {
-    padding-top: 100px;
-    padding-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 }
 

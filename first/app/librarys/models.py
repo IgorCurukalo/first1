@@ -13,7 +13,7 @@ class Librarys(models.Model):
         'LibrarysStorage',
         on_delete=models.CASCADE,
         related_name='librarysstorage_librarys',
-        verbose_name='ID библиотеки',
+        verbose_name='Хранилище библиотеки',
         null=True,
         blank=True
     )

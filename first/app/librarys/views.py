@@ -1,8 +1,9 @@
 from django_filters.views import FilterView
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from app.librarys.models import Librarys, Librarian
-from app.librarys.forms import LibrarysForm
+from app.librarys.forms import LibrarysForm, LibrarysAddNewForm
 from app.librarys.filters import LibrarysFilter
 
 class LibrarysList(FilterView):
@@ -17,24 +18,15 @@ class LibrarysList(FilterView):
         context['librarys'] = self.queryset
         return context
 
-def add_librarys(request):
-
-    if request.method == 'POST':
-        form = LibrarysForm(request.POST)
-
-        if form.is_valid():
-            librarys_name = form.cleaned_data['librarys_name']
-            Librarys.objects.create(librarys_name=librarys_name)
-
-    form = LibrarysForm()
-
-    context = {
-        'form': form,
-    }
-
-    return render(request, 'librarys/add_librarys.html', context=context)
 
 class LibrarysDetail(DetailView):
 
     model = Librarys
     pk_url_kwarg = 'pk'
+
+
+class CreateLibrarysView(CreateView):
+    model = Librarys
+    form_class = LibrarysAddNewForm
+    template_name = 'librarys/librarys_add_new.html'
+    success_url = reverse_lazy('librarys')

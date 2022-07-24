@@ -1,9 +1,11 @@
 from django_filters.views import FilterView
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from app.books.models import Books, Author
-from app.books.forms import BookForm
+from app.books.forms import BookForm, BooksAddNewForm
 from app.books.filters import BooksFilter
+
 
 
 class BookList(FilterView):
@@ -31,6 +33,7 @@ def add_books(request):
             book_name = form.cleaned_data['book_name']
             # authors = form.cleaned_data['authors']
             Books.objects.create(book_name=book_name)
+            # form.save()
 
     form = BookForm()
 
@@ -46,3 +49,10 @@ class BooksDetail(DetailView):
     model = Books
     # template_name = 'books_detail.html'
     pk_url_kwarg = 'pk'
+
+
+class CreateBooksView(CreateView):
+    model = Books
+    form_class = BooksAddNewForm
+    template_name = 'books/books_add_new.html'
+    success_url = reverse_lazy('main')
