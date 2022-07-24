@@ -9,14 +9,19 @@ class BookForm(forms.Form):
     author_query = Author.objects.all()
 
     author_array = [
-        (author.id, f'{author.first_name, author.last_name}') for author in author_query
+        (author.id, f'{author.last_name} {author.first_name} {author.father_name}') for author in author_query
         ]
 
-    book_name = forms.CharField(min_length=4)
+    book_name = forms.CharField(
+        min_length=4,
+        widget=forms.TextInput(attrs={"class": "filter"}),
+        label='Название книги'
+    )
 
     authors = forms.MultipleChoiceField(
             widget=forms.CheckboxSelectMultiple(),
             choices=author_array,
-            required=False
+            required=False,
+            label='Авторы'
         )
 

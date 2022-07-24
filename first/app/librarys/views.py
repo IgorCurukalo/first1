@@ -24,6 +24,7 @@ def add_librarys(request):
 
         if form.is_valid():
             librarys_name = form.cleaned_data['librarys_name']
+            Librarys.objects.create(librarys_name=librarys_name)
 
     form = LibrarysForm()
 

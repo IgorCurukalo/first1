@@ -29,7 +29,8 @@ def add_books(request):
 
         if form.is_valid():
             book_name = form.cleaned_data['book_name']
-            authors = form.cleaned_data['authors']
+            # authors = form.cleaned_data['authors']
+            Books.objects.create(book_name=book_name)
 
     form = BookForm()
 

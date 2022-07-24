@@ -6,5 +6,9 @@ from app.librarys.models import Librarys
 
 class LibrarysForm(forms.Form):
 
-    librarys_name = forms.CharField(min_length=4)
+    librarys_name = forms.CharField(
+        min_length=4,
+        widget=forms.TextInput(attrs={"class": "filter"}),
+        label='Название библиотеки'
+    )
 
