@@ -4,19 +4,33 @@
 
 {% include "inc/_header.html" %}
 
+ {% if user.is_active %}
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6">
+            <div class="single_service">
+                <form method="get">
+                    <H3>Фильтр:</H3>
+                    {{ filter.form.as_p }}
+                    <input type="Submit" />
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
      <!-- service_area_start  -->
     <div class="service_area">
         <div class="container">
             <div class="row justify-content-center ">
                 <div class="col-lg-7 col-md-10">
                     <div class="section_title text-center mb-95">
-                        <h3>Книги доступные каждому</h3>
-                        <p>Библиотеки г.Тюмени</p>
+                        <h3>Библиотеки</h3>
+                        <p>г.Тюмень</p>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-center">
-                {% for library in librarys %}
+                {% for library in filter.qs %}
                 <div class="col-lg-4 col-md-6">
                     <div class="single_service">
                          <div>

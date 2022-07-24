@@ -7,45 +7,54 @@ class LoginForm(forms.Form):
 
     username = forms.CharField(
         max_length=250,
-        label='логин'
+        label='Логин',
+        widget=forms.TextInput(attrs={"class": "filter"})
     )
 
     password = forms.CharField(
         label='Пароль',
-        widget=forms.PasswordInput()
+        widget=forms.PasswordInput(attrs={"class": "filter"})
     )
 
     class Meta:
         model = User
-        fields = ('username','password')
+        fields = ('username', 'password')
+        # widgets = {
+        #     'username': forms.TextInput(attrs={"class": "filter"}),
+        #     'password': forms.PasswordInput(attrs={"class": "filter"}),
+        # }
 
 class RegistrationForm(forms.Form):
     first_name = forms.CharField(
         max_length=250,
-        label='Имя'
+        label='Имя',
+        widget=forms.TextInput(attrs={"class": "filter"})
     )
 
     last_name = forms.CharField(
         max_length=250,
-        label='Фамилия'
+        label='Фамилия',
+        widget=forms.TextInput(attrs={"class": "filter"})
     )
 
     email = forms.EmailField(
         label='email',
+        widget=forms.TextInput(attrs={"class": "filter"})
     )
 
     username = forms.CharField(
         max_length=250,
-        label='Имя используемое при авторизации'
+        label='Имя используемое при авторизации',
+        widget=forms.TextInput(attrs={"class": "filter"})
     )
 
     password = forms.CharField(
         label='Пароль',
-        widget=forms.PasswordInput()
+        widget=forms.PasswordInput(attrs={"class": "filter"})
     )
     password2 = forms.CharField(
         label='Подтвердите пароль',
-        widget=forms.PasswordInput()
+        widget=forms.PasswordInput(attrs={"class": "filter"})
     )
 
     class Meta:

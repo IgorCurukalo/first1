@@ -1665,8 +1665,10 @@ h3 {
     position: absolute;
     right: 0;
     bottom: 0;
-    border-top: 15px solid #ffffff;
-    border-left: 15px solid #ffffff;
+    border-top: 15px solid
+ #ffffff;
+    border-left: 15px solid
+ #ffffff;
     top: auto;
     width: 50%;
     height: 60%;
@@ -1870,8 +1872,8 @@ h3 {
 
 /* line 4, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_service.scss */
 .service_area {
-  padding-top: 241px;
-  padding-bottom: 106px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 @media (max-width: 767px) {

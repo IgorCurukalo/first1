@@ -1,13 +1,1 @@
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Registration</title>
-</head>
-<body>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" Class="btn">Зарегистрировать пользователя</button>
-    </form>
-</body>
-</html>
+{% extends 'base_registration.html' %}

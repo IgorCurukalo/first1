@@ -13,8 +13,8 @@
                             <div class="col-lg-6 col-md-8">
                                 <div class="short_contact_list">
                                     <ul>
-                                        <li><a href="#">+880 4664 216</a></li>
-                                        <li><a href="#">Mon - Sat 10:00 - 7:00</a></li>
+                                        <li><a href="#">+999 999 999</a></li>
+                                        <li><a href="#">Понедельник - Пятница 09:00 - 18:00</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -55,8 +55,10 @@
                                             {% if user.is_authenticated %}
                                                 <li><a href="{% url 'add_books' %}">Добавить книгу</a></li>
                                                 <li><a href="{% url 'librarys' %}">Библиотеки</a></li>
+                                                <li><a href="{% url 'add_librarys' %}">Добавить библиотеку</a></li>
                                                 <li><a href="{% url 'logout' %}">Logout</a></li>
                                             {% else %}
+                                                <li><a href="{% url 'librarys' %}">Библиотеки</a></li>
                                                 <li><a href="{% url 'login' %}">Login</a></li>
                                                 <li><a href="{% url 'register' %}">Register</a></li>
                                             {% endif %}

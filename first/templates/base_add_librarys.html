@@ -1,0 +1,15 @@
+{% load static %}
+
+{% include "inc/_inc.html" %}
+
+{% include "inc/_header.html" %}
+
+{% block add_librarys %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}
+
+{% include "inc/_footer.html" %}

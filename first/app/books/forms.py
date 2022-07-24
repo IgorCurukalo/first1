@@ -13,8 +13,10 @@ class BookForm(forms.Form):
         ]
 
     book_name = forms.CharField(min_length=4)
+
     authors = forms.MultipleChoiceField(
             widget=forms.CheckboxSelectMultiple(),
             choices=author_array,
             required=False
         )
+
