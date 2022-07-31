@@ -4,6 +4,7 @@ from django.db import models
 #Библиотеки
 class Librarys(models.Model):
     librarys_name = models.CharField(max_length=100, verbose_name='Название библиотеки')
+    librarys_address = models.CharField(max_length=200, verbose_name='Адрес библиотеки')
     librarian = models.ManyToManyField(
         'Librarian',
         related_name='librarys'

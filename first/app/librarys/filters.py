@@ -4,9 +4,10 @@ from app.librarys.models import Librarys
 
 class LibrarysFilter(django_filters.FilterSet):
 
-    librarys_name = django_filters.CharFilter(widget=forms.TextInput(attrs={"class": "filter"}))
+    librarys_name = django_filters.CharFilter(widget=forms.TextInput(attrs={"class": "text"}))
+    librarys_address = django_filters.CharFilter(widget=forms.TextInput(attrs={"class": "text"}))
 
     class Meta:
         model = Librarys
-        fields = ['librarys_name']
+        fields = ['librarys_name', 'librarys_address']
         exclude = ['library_img']

@@ -1,0 +1,15 @@
+.text {
+            border:1px solid #ccc;
+            border-radius:5px;
+            height:25px;
+            width:300px;
+            margin: 10px 10px 10px 0;
+}
+
+.memo {
+        border:1px solid #ccc;
+        border-radius:5px;
+        height:200px;
+        width:300px;
+        margin: 10px 10px 10px 0;
+}

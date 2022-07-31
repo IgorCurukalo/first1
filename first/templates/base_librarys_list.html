@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="row justify-content-center">
-                {% for library in filter.qs %}
+                {% for library in page_obj %}
                 <div class="col-lg-4 col-md-6">
                     <div class="single_service">
                          <a href="{{ library.pk }}">
@@ -39,12 +39,30 @@
                              </div>
                              <div class="service_content text-center">
                                 <h3>{{ library.librarys_name }}</h3>
+                                <h4>{{ library.librarys_address }}</h4>
                              </div>
                          </a>
                     </div>
                 </div>
                 {% endfor %}
             </div>
+
+            <div class="section_title text-center mb-95">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; Первый</a>
+                <a href="?page={{ page_obj.previous_page_number }}">Предыдущий</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Слудующий</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">Последний &raquo;</a>
+            {% endif %}
+            </div>
+
         </div>
     </div>
 

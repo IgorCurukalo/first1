@@ -11,15 +11,15 @@ fieldsets - настройки для страницы с изменениями
 
 class LibrarysAdmin(admin.ModelAdmin):
     list_display = (
-        'id', 'librarys_name', 'description', 'id_librarys_storage', 'date_add', 'is_daleted'
+        'id', 'librarys_name', 'librarys_address', 'description', 'id_librarys_storage', 'date_add', 'is_daleted'
     )
     list_display_links = ('id', 'librarys_name')
-    search_fields = ('librarys_name',)
+    search_fields = ('librarys_name', 'librarys_address')
     list_editable = ('is_daleted',)
     list_filter = ('librarys_name', 'is_daleted')
     fieldsets = (
         (None, {
-            'fields': ('librarys_name', 'description', 'id_librarys_storage', 'library_img')
+            'fields': ('librarys_name', 'librarys_address', 'description', 'id_librarys_storage', 'library_img')
         }),
     )
 
