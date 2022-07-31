@@ -3,6 +3,7 @@ from django.db import models
 
 
 class Books(models.Model):
+
     book_name = models.CharField(max_length=100, verbose_name='Название книги')
     author = models.ManyToManyField(
         'Author',
@@ -37,11 +38,13 @@ class Books(models.Model):
         return self.book_name
 
     class Meta:
+
         verbose_name = 'Книга'
         verbose_name_plural = 'Книги'
 
 
 class PublishingHouse(models.Model):
+
     publishing_house_name = models.CharField(max_length=300, verbose_name='Название издательства')
     adress = models.CharField(max_length=1500, verbose_name='Адрес компании')
     contact_phone = models.CharField(max_length=20, verbose_name='Номер телефон')
@@ -54,6 +57,7 @@ class PublishingHouse(models.Model):
         return self.publishing_house_name
 
     class Meta:
+
         verbose_name = 'Издательство'
         verbose_name_plural = 'Издательства'
 
@@ -72,10 +76,12 @@ class Author(models.Model):
         return f'{self.last_name} {self.first_name} {self.father_name}'
 
     class Meta:
+
         verbose_name = 'Автор'
         verbose_name_plural = 'Авторы'
 
 
 class BooksInAuthor(admin.TabularInline):
+
     model = Books.author.through
 

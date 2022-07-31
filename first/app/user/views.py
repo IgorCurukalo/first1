@@ -6,6 +6,7 @@ from app.user.forms import RegistrationForm, LoginForm
 
 
 def create_user(request):
+
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
@@ -27,6 +28,7 @@ def create_user(request):
     return render(request, 'user/registration.html', context=context)
 
 def login_user(request):
+
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -52,5 +54,6 @@ def login_user(request):
 
 
 def logout_user(request):
+
     auth.logout(request)
     return redirect('main')

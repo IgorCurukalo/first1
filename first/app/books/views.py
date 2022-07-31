@@ -25,11 +25,13 @@ class BookList(FilterView):
 
 
 class BooksDetail(DetailView):
+
     model = Books
     pk_url_kwarg = 'pk'
 
 
 class CreateBooksView(CreateView):
+
     model = Books
     form_class = BookForm
     template_name = 'books/books_add_new.html'

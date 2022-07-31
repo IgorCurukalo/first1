@@ -30,6 +30,7 @@ class LibrarysDetail(DetailView):
 
 
 class CreateLibrarysView(CreateView):
+
     model = Librarys
     form_class = LibrarysForm
     template_name = 'librarys/librarys_add_new.html'

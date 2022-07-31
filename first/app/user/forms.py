@@ -17,6 +17,7 @@ class LoginForm(forms.Form):
     )
 
     class Meta:
+
         model = User
         fields = ('username', 'password')
         # widgets = {
@@ -25,6 +26,7 @@ class LoginForm(forms.Form):
         # }
 
 class RegistrationForm(forms.Form):
+
     first_name = forms.CharField(
         max_length=250,
         label='Имя',

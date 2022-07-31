@@ -3,12 +3,14 @@ from django.db import models
 
 #Библиотеки
 class Librarys(models.Model):
+
     librarys_name = models.CharField(max_length=100, verbose_name='Название библиотеки')
     librarys_address = models.CharField(max_length=200, verbose_name='Адрес библиотеки')
     librarian = models.ManyToManyField(
         'Librarian',
         related_name='librarys'
     )
+
     description = models.TextField(verbose_name='Описание библиотеки', null=True, blank=True)
     id_librarys_storage = models.ForeignKey(
         'LibrarysStorage',
@@ -18,6 +20,7 @@ class Librarys(models.Model):
         null=True,
         blank=True
     )
+
     date_add = models.DateTimeField(auto_now_add=True, verbose_name='Дата добавления')
     is_daleted = models.BooleanField(default=False, verbose_name='Удалено')
     library_img = models.ImageField(
@@ -31,11 +34,13 @@ class Librarys(models.Model):
         return self.librarys_name
 
     class Meta:
+
         verbose_name = 'Библиотека'
         verbose_name_plural = 'Библиотеки'
 
 #Хранилище библиотеки - адрес и т.д.
 class LibrarysStorage(models.Model):
+
     librarys_storage_address = models.CharField(max_length=1500, verbose_name='Адрес хранилища библиотеки')
     date_creation = models.DateField(verbose_name='Дата отрытия библиотеки', null=True, blank=True)
     contact_phone = models.CharField(max_length=20, verbose_name='Номер телефона')
@@ -48,11 +53,13 @@ class LibrarysStorage(models.Model):
         return self.librarys_storage_address
 
     class Meta:
+
         verbose_name = 'Хранилище'
         verbose_name_plural = 'Хранилища'
 
 #Библиотекари
 class Librarian(models.Model):
+
     first_name = models.CharField(max_length=100, verbose_name='Имя библиотекаря')
     last_name = models.CharField(max_length=100, verbose_name='Фамилия библиотекаря')
     father_name = models.CharField(max_length=100, verbose_name='Отчество библиотекаря', null=True, blank=True)
@@ -68,9 +75,11 @@ class Librarian(models.Model):
         return self.last_name
 
     class Meta:
+
         verbose_name = 'Библиотекарь'
         verbose_name_plural = 'Библиотекари'
 
 
 class LibrarysInLibrarian(admin.TabularInline):
+
     model = Librarys.librarian.through

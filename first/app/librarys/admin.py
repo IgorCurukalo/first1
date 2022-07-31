@@ -10,6 +10,7 @@ fieldsets - настройки для страницы с изменениями
 
 
 class LibrarysAdmin(admin.ModelAdmin):
+
     list_display = (
         'id', 'librarys_name', 'librarys_address', 'description', 'id_librarys_storage', 'date_add', 'is_daleted'
     )
@@ -25,6 +26,7 @@ class LibrarysAdmin(admin.ModelAdmin):
 
 
 class LibrarysStorageAdmin(admin.ModelAdmin):
+
     list_display = (
         'id', 'librarys_storage_address', 'date_creation', 'contact_phone',
         'email', 'website_linck', 'date_add', 'is_daleted'
@@ -47,6 +49,7 @@ class LibrarysStorageAdmin(admin.ModelAdmin):
 
 
 class LibrarianAdmin(admin.ModelAdmin):
+
     list_display = ('id', 'first_name', 'last_name', 'father_name', 'date_creation',
                     'birthday', 'home_address', 'contact_phone', 'email',
                     'date_add', 'is_daleted')

@@ -10,6 +10,7 @@ fieldsets - настройки для страницы с изменениями
 
 
 class BooksAdmin(admin.ModelAdmin):
+
     list_display = (
         'id', 'book_name', 'description', 'id_publishing_house', 'date_creation', 'date_add', 'is_daleted'
     )
@@ -25,6 +26,7 @@ class BooksAdmin(admin.ModelAdmin):
 
 
 class PublishingHouseAdmin(admin.ModelAdmin):
+
     list_display = (
         'id', 'publishing_house_name', 'adress', 'contact_phone', 'email',
         'website_linck', 'date_add', 'is_daleted'
@@ -47,6 +49,7 @@ class PublishingHouseAdmin(admin.ModelAdmin):
 
 
 class AuthorAdmin(admin.ModelAdmin):
+
     list_display = ('id', 'first_name', 'last_name', 'father_name', 'country',
                     'birthday', 'languages', 'date_add', 'is_daleted')
     list_display_links = ('id', 'first_name')

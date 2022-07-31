@@ -35,6 +35,7 @@ class LibrarysForm(forms.ModelForm):
     )
 
     class Meta:
+
         model = Librarys
         fields = ['librarys_name', 'librarys_address', 'description', 'librarian', 'id_librarys_storage', 'library_img']
         widgets = {
