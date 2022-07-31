@@ -1870,27 +1870,6 @@ h3 {
   background-image: url(../img/service/service_icon_bg_1.png);
 }
 
-/* line 4, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_service.scss */
-.service_area {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-@media (max-width: 767px) {
-  /* line 4, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_service.scss */
-  .service_area {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  /* line 4, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_service.scss */
-  .service_area {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-}
 
 /* line 15, ../../Arafath/CL/january 2020/240. Animal/HTML/scss/_service.scss */
 .service_area .single_service {

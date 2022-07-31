@@ -8,10 +8,10 @@
     <div class="row justify-content-center">
         <div class="col-lg-4 col-md-6">
             <div class="single_service">
-                <H3>Фильтр:</H3>
-                <form method="get">
+                <H3 class="row justify-content-center">Фильтр:</H3>
+                <form method="get" class="setup_centr">
                     {{ filter.form.as_p }}
-                    <input type="Submit" />
+                    <button type="submit" Class="btn">Применить фильтр</button>
                 </form>
             </div>
         </div>
@@ -19,7 +19,7 @@
     {% endif %}
 
      <!-- service_area_start  -->
-    <div class="service_area">
+
         <div class="container">
             <div class="row justify-content-center ">
                 <div class="col-lg-7 col-md-10">
@@ -64,6 +64,5 @@
             </div>
 
         </div>
-    </div>
 
 {% include "inc/_footer.html" %}
