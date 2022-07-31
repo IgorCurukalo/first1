@@ -30,7 +30,7 @@ class LibrarysForm(forms.ModelForm):
     librarian = forms.MultipleChoiceField(
         widget=forms.CheckboxSelectMultiple(),
         choices=librarian_array,
-        required=False,
+        required=True,
         label='Библиотекари'
     )
 
@@ -38,7 +38,7 @@ class LibrarysForm(forms.ModelForm):
         model = Librarys
         fields = ['librarys_name', 'librarys_address', 'description', 'librarian', 'id_librarys_storage', 'library_img']
         widgets = {
-            'librarys_name': forms.TextInput(attrs={'class': "text"}),
-            'librarys_address': forms.TextInput(attrs={'class': "text"}),
-            'description': forms.Textarea(attrs={'class': "memo"}),
+            'librarys_name': forms.TextInput(attrs={'class': "librarys_text"}),
+            'librarys_address': forms.TextInput(attrs={'class': "librarys_text"}),
+            'description': forms.Textarea(attrs={'class': "librarys_textarea"}),
         }

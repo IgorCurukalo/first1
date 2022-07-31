@@ -9,7 +9,11 @@ class Books(models.Model):
         related_name='books',
         verbose_name='Авторы'
     )
-    description = models.TextField(verbose_name='Описание книги', null=True, blank=True)
+    description = models.TextField(
+        verbose_name='Описание книги',
+        null=True,
+        blank=True
+    )
     id_publishing_house = models.ForeignKey(
         'PublishingHouse',
         on_delete=models.CASCADE,
